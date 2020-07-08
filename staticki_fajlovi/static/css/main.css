@@ -64,16 +64,60 @@ html *
   }
 
 
-#id_username{
+/* #id_username{
   margin-left: 80px;
-}
+} */
 
-#id_email{
+/* #id_email{
   margin-left: 90px;
+} */
+
+#register_email{
+  width: 30%;
 }
 
-#id_password{
-  margin-left: 134px;
+#register_pass1{
+  width: 30%;
+}
+
+#register_pass2{
+  width: 30%;
+}
+
+#register_username {
+  width: 30%;
+}
+
+#login_username{
+  width: 30%;
+}
+
+#login_password{
+  width: 30%;
+}
+
+#oldpass{
+  width: 30%;
+}
+
+#newpass1{
+  width: 30%;
+}
+
+#newpass2{
+  width: 30%;
+}
+
+#newpass2{
+  width: 30%;
+}
+
+#editprofile_email{
+  width: 30%;
+}
+
+#editprofile_username{
+  width: 30%;
 }
 
 #id_password1{
@@ -83,7 +127,6 @@ html *
 #id_password2{
   margin-left: 72px;
 }
-
 
 #logouttekst{
   margin-top: 60px;
@@ -114,7 +157,6 @@ html *
   overflow: auto;
 }
 
-#receptipretragabar{
-  width: 50%;
-  margin-left: 100px;
+#nesa{
+  max-width: 600px;
 }

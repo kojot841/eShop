@@ -6,15 +6,21 @@ from django.contrib.auth.forms import UserChangeForm, ReadOnlyPasswordHashField,
 User = get_user_model()
 
 class LoginForm(forms.Form):
-    username        = forms.CharField(label='Korisničko ime')
-    password        = forms.CharField(label='Lozinka', widget=forms.PasswordInput)
+    username        = forms.CharField(label='Korisničko ime', widget=forms.TextInput(attrs={"id":"login_username", "class": "form-control", 
+                        "placeholder": "Korisničko ime"}))
+    password        = forms.CharField(label='Lozinka', widget=forms.PasswordInput(attrs={"id":"login_password", "class": "form-control", 
+                        "placeholder": "Lozinka"}))
 
 
 class RegisterForm(forms.ModelForm):
-    password1       = forms.CharField(label='Lozinka', widget=forms.PasswordInput)
-    password2       = forms.CharField(label='Potvrda lozinke', widget=forms.PasswordInput)
-    username        = forms.CharField(label='Korisničko ime')
-    email           = forms.EmailField(label='Email adresa')
+    password1       = forms.CharField(label='Lozinka', widget=forms.PasswordInput(attrs={"id":"register_pass1","class": "form-control", 
+                        "placeholder": "Lozinka",}))
+    password2       = forms.CharField(label='Potvrda lozinke', widget=forms.PasswordInput(attrs={"id":"register_pass2", "class": "form-control", 
+                        "placeholder": "Ponovljena lozinka",}))
+    username        = forms.CharField(label='Korisničko ime', widget=forms.TextInput(attrs={"id":"register_username", "class": "form-control", 
+                        "placeholder": "Korisničko ime",}))
+    email           = forms.EmailField(label='Email adresa', widget=forms.TextInput(attrs={"id":"register_email","class": "form-control", 
+                        "placeholder": "Email adresa",}))
 
     class Meta:
         model   = User
@@ -41,8 +47,10 @@ class EditProfileForm(UserChangeForm):
         help_text=("Password ne čuvamo zbog sigurnosti, tako da ne postoji mogućnost da vidite trenutnu lozinku"
                     " za svoj proil,"
                     " ali možete promeniti lozinku koristeći link ispod."))
-    email           = forms.EmailField(label='Email adresa')
-    username        = forms.CharField(label='Korisničko ime')
+    email           = forms.EmailField(label='Email adresa',widget=forms.TextInput(attrs={"id":"editprofile_email", "class": "form-control", 
+                        "placeholder": "Nova Email adresa"}) )
+    username        = forms.CharField(label='Korisničko ime', widget=forms.TextInput(attrs={"id":"editprofile_username", "class": "form-control", 
+                        "placeholder": "Novo korisničko ime"}))
 
     class Meta:
         model = User
@@ -53,7 +61,10 @@ class EditProfileForm(UserChangeForm):
         )
 
 class ChangePassword(PasswordChangeForm):
-    old_password       = forms.CharField(label='Stara Lozinka', widget=forms.PasswordInput)
-    new_password1       = forms.CharField(label='Nova Lozinka', widget=forms.PasswordInput)
-    new_password2       = forms.CharField(label='Nova Lozinka potvrda', widget=forms.PasswordInput)
+    old_password       = forms.CharField(label='Stara Lozinka', widget=forms.PasswordInput(attrs={"id":"oldpass","class": "form-control", 
+                        "placeholder": "Stara Lozinka"}))
+    new_password1       = forms.CharField(label='Nova Lozinka', widget=forms.PasswordInput(attrs={"id":"newpass1","class": "form-control", 
+                        "placeholder": "Nova lozinka",}))
+    new_password2       = forms.CharField(label='Nova Lozinka potvrda', widget=forms.PasswordInput(attrs={"id":"newpass2","class": "form-control", 
+                        "placeholder": "Nova lozinka"}))
     
