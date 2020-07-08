@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1 class="my-3">Kupovina</h1>
+{% if placanja.proizvodi.exists %}
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Naziv proizvoda</th>
+        <th scope="col">Količina</th>
+        <th scope="col">Cena</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for proizvod in placanja.proizvodi.all %} 
+    <!-- {{proizvod.id}}    -->
+      <tr>
+        <th scope="row">{{ forloop.counter }}</th>
+        <td><a href="{{ proizvod.url }}">{{proizvod.naziv}}</a>&nbsp <small>
+            {% include "placanja/ukloni_proizvod.html"%}</small></td>
+        <td>1</td>
+        <td>{{proizvod.cena}} dinara</td>
+      </tr>
+    {% endfor %}
+    <tr>
+        <th colspan="3"></th>
+        <td>Ukupno: {{placanja.ukupno}} dinara</td>
+    </tr>
+    <tr>
+        <th colspan="3"></th>
+        <td>Poštarina: {{ placanja.postarina }} dinara</td>
+    </tr>
+    <tr>
+        <th colspan="3"></th>
+        <td><strong>Ukupno sa poštarinom: {{ placanja.ukupno_sa_postarinom }}</strong></td>
+    </tr>
+    <tr>
+      <th colspan="3"></th>
+      <td><a class="btn btn-success" href="{% url 'placanje:checkout' %}">Plati</a></td>
+  </tr>
+    </tbody>
+  </table>
+
+  {% else %}
+  <p>Vaša korpa je prazna</p>
+
+{% endif %}
+{% endblock content %}

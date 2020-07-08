@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+<h1>Plaćanje</h1>
+<br>
+<p>Ukupno: {{placanja.placanje_narudzbina.ukupno}}</p>
+<p>Poštarina: {{placanja.postarina_ukupno}}</p>
+<p>Ukupno za naplatu sa poštarinom: {{placanja.ukupno}}</p>
+<a href=""><i class="fab fa-cc-visa fa-3x"></i></a> &nbsp; <a href=""><i class="fab fa-cc-paypal fa-3x"></i></a>
+</div>
+<div>
+    <br>
+    <p>Plati pouzećem: <a href="{% url 'placanje:pouzece' %}"><i class="fas fa-shipping-fast fa-2x"></i></p></a>
+</div>
+
+{% endblock content %}

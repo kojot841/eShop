@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="mt-3">Prijava</h1>
+<br>
+    <form class="form" method='POST'> {% csrf_token %}
+      {{ form.as_p }}
+      <button type='submit' class='btn btn-light'>Prijava</button>
+    </form>
+    <br>
+    {% if messages %}
+        {% for message in messages %}
+            {%  if forloop.first  %}
+                <p>{{ message.message }}</p>
+            {% endif %}
+        {% endfor %}
+{% endif %}
+{% endblock content %}
+

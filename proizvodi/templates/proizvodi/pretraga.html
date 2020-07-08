@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="row mt-3">
+    {% if request.GET.q %}
+    <div class="col-12">
+        Rezultati pretrage za: {{request.GET.q}}
+        <hr>
+    </div>
+    {% endif %}
+</div>
+
+<div class='row'>
+    {% for proizvod in object_list %}
+        <div class="col-lg-4 col-md-6 col-xs-8 mt-2">
+        <div class="card" style="width: 15rem;">
+                <img class="img-thumbnail img-fluid" src="{{ proizvod.slika.url }}" alt="Card image cap">
+            <div id="card-opacity" class="card-body">
+              <p class="card-title">{{ proizvod.naziv }}</p>
+              <p class="card-text">{{ proizvod.opis|slice:":18" }}...</p>
+              <a href="{{ proizvod.url }}" class="btn btn-primary">Detalji</a>
+            </div>
+          </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock content %}
+

@@ -1,0 +1,120 @@
+body {
+    background-image: url(/media/pozadina.png);
+    font-weight: 500;
+    font-size: larger;
+  }
+
+#about_h1 {
+    text-align: center;
+}
+
+html *
+{
+    font-family: 'Amatic SC', cursive, Sans-Serif;
+}
+
+#card-opacity {
+        background-image: url(/media/cupcake.png);
+        background-repeat: no-repeat;
+        background-size: 20%;
+        background-position-x: right;
+        background-position-y: top;
+  }
+
+.card-title{
+      font-size: large;
+      font-weight: 600;
+  }
+
+.card-text{
+      font-size: medium;
+  }
+
+
+
+  #col-1 {
+    position: relative;
+    width: 40%;
+    float: left;
+    height: 100%;
+
+  }
+  
+  #col-2 {
+    position: relative;
+    width: 60%;
+    float: left;
+    height: 100%;
+  }
+
+  .section-title{
+    text-align: center;
+  }
+
+
+.radnovreme{
+    font-weight: 600;
+    font-size: xx-large;
+  }
+
+
+.lokacija{
+    font-weight: 600;
+    font-size: xx-large;
+  }
+
+
+#id_username{
+  margin-left: 80px;
+}
+
+#id_email{
+  margin-left: 90px;
+}
+
+#id_password{
+  margin-left: 134px;
+}
+
+#id_password1{
+  margin-left: 132px;
+}
+
+#id_password2{
+  margin-left: 72px;
+}
+
+
+#logouttekst{
+  margin-top: 60px;
+}
+
+#id_old_password{
+  margin-left: 68px;
+}
+
+#id_new_password1{
+  margin-left: 68px;
+}
+
+#dovidjenja{
+  font-size: x-large;
+  font-weight: 500;
+}
+
+
+#receptpost{
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  overflow: auto;
+}
+
+#receptipretragabar{
+  width: 50%;
+  margin-left: 100px;
+}

@@ -1,0 +1,68 @@
+{% url 'pocetna' as pocetna %}
+{% url 'proizvodi' as proizvodi %}
+{% url 'kontakt' as kontakt %}
+{% url 'o_nama' as o_nama %}
+{% url 'recepti' as recepti %}
+{% url 'prijava' as prijava %}
+{% url 'registracija' as registracija %}
+{% url 'odjava' as odjava %}
+{% url 'placanje:pocetna' as placanje %}
+{% url 'azuriranje_profila' as azuriranje_profila %}
+{% url 'promena_lozinke' as promena_lozinke %}
+{% url 'zaboravljena_lozinka' as zaboravljena_lozinka %}
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="{% url 'pocetna' %}">
+    <img class="img-fluid" src="/media/cupcake.png" width="35" height="35";" alt="Kolacic"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <!-- <li class="nav-item {% if request.path == pocetna %} active {% endif %} ">
+            <a class="nav-link" href="{{pocetna}}">Početna <span class="sr-only">(current)</span></a>
+        </li> -->
+        <li class="nav-item {% if request.path == proizvodi %} active {% endif %}">
+          <a class="nav-link" href="{{proizvodi}}">Proizvodi</a>
+        <li class="nav-item {% if request.path == kontakt %} active {% endif %}">
+          <a class="nav-link" href="{{kontakt}}">Kontakt</a>
+        </li>
+        <li class="nav-item {% if request.path == o_nama %} active {% endif %}">
+            <a class="nav-link" href="{{o_nama}}">O nama</a>
+        </li>
+        <li class="nav-item {% if request.path == recepti %} active {% endif %}">
+          <a class="nav-link" href="{{recepti}}">Recepti</a>
+        </li>
+
+          {% if request.user.is_authenticated %}
+        <li class="nav-item {% if request.path == azuriranje_profila %} active {% endif %} ">
+            <a class="nav-link" href="{{azuriranje_profila}}">Ažuriranje profila</a>
+        </li>
+        <li class="nav-item {% if request.path == promena_lozinke %} active {% endif %} ">
+          <a class="nav-link" href="{{promena_lozinke}}">Promena lozinke</a>
+      </li>
+        <li class="nav-item {% if request.path == odjava %} active {% endif %} ">
+          <a class="nav-link" href="{{odjava}}">Odjava</a>
+        </li>
+          {% else %}
+           <li class="nav-item {% if request.path == prijava %} active {% endif %} ">
+            <a class="nav-link" href="{{prijava}}">Prijava</a>
+          </li>
+          <li class="nav-item {% if request.path == zaboravljena_lozinka %} active {% endif %} ">
+            <a class="nav-link" href="{{zaboravljena_lozinka}}">Zaboravljena lozinka</a>
+          </li>
+          <li class="nav-item {% if request.path == registracija %} active {% endif %} ">
+            <a class="nav-link" href="{{registracija}}">Registracija</a>
+          </li>
+          {% endif %}
+          <li class="nav-item {% if request.path == placanje %} active {% endif %} ">
+            <a class="nav-link" href="{{placanje}}"><!--{{request.session.broj_proizvoda}}--> <i class="far fa-credit-card"></i></a>
+          </li>
+      </ul>
+        {% include "proizvodi/pretraga-form.html"%}
+    </div>
+  </nav>
+

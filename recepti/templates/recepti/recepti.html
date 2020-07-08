@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% if user.is_authenticated %}
+<div class="container mt-2">
+    {% include "recepti/pretraga-recepti-form.html" %}
+</div>
+    <div class="container mt-5">
+        <div class="col-md-8">
+            <h1>Recepti</h1>
+            <form method="post">
+                <br>
+                {% csrf_token %}
+                    {{ form.post }}
+                <button class="btn btn-success" type="submit">Pošalji</button>
+                <br>
+            </form>
+            <p>{{ text }}</p>
+        {% for post in posts %}
+            <hr>
+            <p>{{ post.post}}</p>
+            <p><small>Postovao {{ post.user }}, {{ post.kreirano }}</small></p> 
+            <hr>
+        {% endfor %}
+        </div>
+{% else %}
+<div class="container mt-5">
+<p>Ukoliko želite da pošaljete svoj recept ili pročitate recepte drugih korisnika, morate biti ulogovani. 
+    Možete se ulogovati na sledećem linku: </p>
+<strong><a href="{% url 'prijava' %}">Uloguj se</a><strong>
+</div>
+{% endif %}
+{% endblock content %}

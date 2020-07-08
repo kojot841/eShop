@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <form method="POST" class="mt-5">
+     {% csrf_token %}
+     {{ form.as_p }}
+     <a href="{% url 'promena_lozinke' %}"><strong>Promena Lozinke</strong></a>
+     <br>
+     <br>
+     <button type="submit">Pošalji</button>
+    </form>
+</div>
+{% endblock content %}
