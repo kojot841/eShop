@@ -10,7 +10,7 @@ body {
 
 html *
 {
-    font-family: 'Amatic SC', cursive, Sans-Serif;
+    font-family: Serif, Sans-Serif;
 }
 
 #card-opacity {
@@ -34,7 +34,7 @@ html *
 
   #col-1 {
     position: relative;
-    width: 40%;
+    width: 50%;
     float: left;
     height: 100%;
 
@@ -42,7 +42,7 @@ html *
   
   #col-2 {
     position: relative;
-    width: 60%;
+    width: 50%;
     float: left;
     height: 100%;
   }
@@ -73,51 +73,51 @@ html *
 } */
 
 #register_email{
-  width: 30%;
+  width: 50%;
 }
 
 #register_pass1{
-  width: 30%;
+  width: 50%;
 }
 
 #register_pass2{
-  width: 30%;
+  width: 50%;
 }
 
 #register_username {
-  width: 30%;
+  width: 50%;
 }
 
 #login_username{
-  width: 30%;
+  width: 50%;
 }
 
 #login_password{
-  width: 30%;
+  width: 50%;
 }
 
 #oldpass{
-  width: 30%;
+  width: 50%;
 }
 
 #newpass1{
-  width: 30%;
+  width: 50%;
 }
 
 #newpass2{
-  width: 30%;
+  width: 50%;
 }
 
 #newpass2{
-  width: 30%;
+  width: 50%;
 }
 
 #editprofile_email{
-  width: 30%;
+  width: 50%;
 }
 
 #editprofile_username{
-  width: 30%;
+  width: 50%;
 }
 
 #id_password1{
@@ -159,4 +159,18 @@ html *
 
 #nesa{
   max-width: 600px;
+}
+
+.google-maps {
+  position: relative;
+  padding-bottom: 75%;
+  height: 0;
+  overflow: hidden;
+}
+.google-maps iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
 }

@@ -134,7 +134,9 @@ EMAIL_HOST_PASSWORD = 'SG.zwEl00ZNTuKCJDF3YnIiqg.WtkSfq7hHZBN8sKsc1W9Ud7_0hdmlU7
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
-
+AUTHENTICATION_BACKENDS = (
+    'registracija.backends.EmailBackend',
+)
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/

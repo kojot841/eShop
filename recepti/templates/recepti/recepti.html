@@ -23,11 +23,17 @@
             <hr>
         {% endfor %}
         </div>
+        <br>
+        <br>
 {% else %}
-<div class="container mt-5">
-<p>Ukoliko želite da pošaljete svoj recept ili pročitate recepte drugih korisnika, morate biti ulogovani. 
-    Možete se ulogovati na sledećem linku: </p>
-<strong><a href="{% url 'prijava' %}">Uloguj se</a><strong>
+<div class="container mt-5"></div>
+<p>Ukoliko želite da pošaljete svoj recept ili pročitate recepte drugih korisnika, morate biti ulogovani. Možete se ulogovati na sledećem linku:
+    <p><strong><a href="{% url 'prijava' %}">Uloguj se</a></strong></p></p>
+<br>
+<p>Ukoliko nemate profil možete se registrovati na linku:
+    <p><strong><a href="{% url 'registracija' %}">Registruj se</a></strong></p></p>
 </div>
+<br>
+<br>
 {% endif %}
 {% endblock content %}

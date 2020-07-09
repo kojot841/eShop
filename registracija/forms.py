@@ -6,21 +6,21 @@ from django.contrib.auth.forms import UserChangeForm, ReadOnlyPasswordHashField,
 User = get_user_model()
 
 class LoginForm(forms.Form):
-    username        = forms.CharField(label='Korisničko ime', widget=forms.TextInput(attrs={"id":"login_username", "class": "form-control", 
-                        "placeholder": "Korisničko ime"}))
+    username        = forms.CharField(label='Email adresa', widget=forms.TextInput(attrs={"id":"login_username", "class": "form-control", 
+                        "placeholder": "Unesite Email adresu"}))
     password        = forms.CharField(label='Lozinka', widget=forms.PasswordInput(attrs={"id":"login_password", "class": "form-control", 
-                        "placeholder": "Lozinka"}))
+                        "placeholder": "Unesite lozinku"}))
 
 
 class RegisterForm(forms.ModelForm):
     password1       = forms.CharField(label='Lozinka', widget=forms.PasswordInput(attrs={"id":"register_pass1","class": "form-control", 
-                        "placeholder": "Lozinka",}))
+                        "placeholder": "Unesite lozinku",}))
     password2       = forms.CharField(label='Potvrda lozinke', widget=forms.PasswordInput(attrs={"id":"register_pass2", "class": "form-control", 
-                        "placeholder": "Ponovljena lozinka",}))
+                        "placeholder": "Ponovo unesite lozinku",}))
     username        = forms.CharField(label='Korisničko ime', widget=forms.TextInput(attrs={"id":"register_username", "class": "form-control", 
-                        "placeholder": "Korisničko ime",}))
+                        "placeholder": "Unesite željeno korisničko ime",}))
     email           = forms.EmailField(label='Email adresa', widget=forms.TextInput(attrs={"id":"register_email","class": "form-control", 
-                        "placeholder": "Email adresa",}))
+                        "placeholder": "Unesite Email adresu",}))
 
     class Meta:
         model   = User

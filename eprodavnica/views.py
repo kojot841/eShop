@@ -23,7 +23,7 @@ def contact_page(request):
             send_mail(subject, message, sender, recipients, fail_silently=False)
             messages.success(request, "Poruka je uspešno poslata. Hvala Vam.")
         except:
-            messages.error(request, "Dogodila se greška, molimo Vas pokušajte ponovo.")
+            pass
     context = { 
         "form": contact_form,}
 

@@ -59,7 +59,6 @@ def edit_profile(request):
             messages.success(request, 'Uspešno ste izmenili podatke')
             return redirect('azuriranje_profila')
     else:
-        messages.error(request, 'Dogodila se greška, pokušajte ponovo!')
         form = EditProfileForm(instance=request.user)
         args = {'form':form}
         return render(request, 'registracija/edit_profile.html', args)
@@ -77,7 +76,6 @@ def change_password(request):
         # else:
         #     return redirect ('accounts:password_reset_form')
     else:
-        messages.error(request, 'Dogodila se greška, pokušajte ponovo!')
         form = ChangePassword(user=request.user)
     args = {'form': form}
     return render(request, 'registracija/promena_lozinke/password_reset_form.html', args)
