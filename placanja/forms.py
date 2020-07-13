@@ -2,45 +2,24 @@ from django import forms
 
 
 class Checkout_Pouzece(forms.Form):
-    ime = forms.CharField(
-            widget=forms.TextInput(
-                    attrs={
+        ime = forms.CharField(widget=forms.TextInput(attrs={
                         "class": "form-control", 
-                        "placeholder": "Vaše ime"
-                    }
-                    )
-            )
-    ulica = forms.CharField(
-            widget=forms.TextInput(
-                    attrs={
-                        "class": "form-control", 
-                        "placeholder": "Vaša ulica"
-                    }
-                    )
-            )
+                        "placeholder": "Vaše ime"}))
+        ulica = forms.CharField(widget=forms.TextInput(attrs={
+                                "class": "form-control", 
+                                "placeholder": "Vaša ulica"}))
 
-    grad = forms.CharField(
-            widget=forms.TextInput(
-                    attrs={
+        grad = forms.CharField(widget=forms.TextInput(attrs={
                         "class": "form-control", 
-                        "placeholder": "Vaš grad"
-                    }
-                    )
-            )
-    telefon = forms.CharField(
-            widget=forms.TextInput(
-                    attrs={
+                        "placeholder": "Vaš grad"}))
+        telefon = forms.CharField(widget=forms.TextInput(attrs={
                         "class": "form-control", 
-                        "placeholder": "Broj telefona"
-                    }
-                    )
-            )
-    email    = forms.EmailField(
-            widget=forms.EmailInput(
-                    attrs={
+                        "placeholder": "Broj telefona"}))
+        email = forms.EmailField(widget=forms.EmailInput(attrs={
                         "class": "form-control", 
                         "placeholder": "Email adresa",
-                        "id": "kontakt_email"
-                    }
-                    )
-            )
+                        "id": "kontakt_email"}))
+
+        Dodatne_informacije  = forms.CharField(widget=forms.Textarea(attrs={
+                    'class': 'form-control',
+                    "placeholder": "Dodatne informacije" }))

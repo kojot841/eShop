@@ -1,9 +1,14 @@
 <form method="POST" action="{% url 'placanje:placanja' %}" class="form">
     {% csrf_token %}
     <input type="hidden" name="id_proizvoda" value="{{proizvodi.id}}">
-    {% if proizvodi in placanja.proizvodi.all %}
-        Proizvod dodat u korpu<button class="btn btn-link" type="submit">Ukloniti?</button>
-    {% else %}
-        <button class="btn btn-success">Dodaj u korpu</button>
-    {% endif %}
-  </form>
+    <label for="kolicina">Količina:</label>
+   <input id="kolicina" type="number" name="qty" value="1" min="0" max="20">
+    &nbsp;<button class="btn btn-success">Dodaj u korpu</button>
+ 
+  <!-- Ova forma je za brisanje iz dela gde se otvara proizvod  </form>
+  <form method="POST" action="{% url 'placanje:placanja' %}" class="form">
+    {% csrf_token %}
+    <input type="hidden" name="id_proizvoda" value="{{proizvodi.id}}">
+    <input type="hidden" name="qty" value="0">
+    <button class="btn btn-link" type="submit">Ukloniti iz korpe?</button>
+</form> -->

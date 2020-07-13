@@ -174,3 +174,8 @@ html *
   width: 100% !important;
   height: 100% !important;
 }
+
+#kolicina{
+  max-width: 50px;
+  border-radius: 10px;
+}

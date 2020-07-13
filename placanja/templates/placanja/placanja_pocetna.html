@@ -2,7 +2,7 @@
 {% block content %}
 
 <h1 class="my-3">Kupovina</h1>
-{% if placanja.proizvodi.exists %}
+{% if placanja.kolicina.exists %}
 <table class="table">
     <thead>
       <tr>
@@ -13,19 +13,18 @@
       </tr>
     </thead>
     <tbody>
-    {% for proizvod in placanja.proizvodi.all %} 
+    {% for proizvod in placanja.kolicina.all %} 
     <!-- {{proizvod.id}}    -->
       <tr>
         <th scope="row">{{ forloop.counter }}</th>
-        <td><a href="{{ proizvod.url }}">{{proizvod.naziv}}</a>&nbsp <small>
-            {% include "placanja/ukloni_proizvod.html"%}</small></td>
-        <td>1</td>
-        <td>{{proizvod.cena}} dinara</td>
+        <td><a href="{{proizvod.proizvod.url}}">{{proizvod.proizvod}}</a> {% include "proizvodi/brisanje_iz_korpe.html" %}</td>
+        <td>{{proizvod.kolicina_proizvoda}}</td>
+        <td>{{proizvod.total}} dinara</td>
       </tr>
     {% endfor %}
     <tr>
         <th colspan="3"></th>
-        <td>Ukupno: {{placanja.ukupno}} dinara</td>
+        <td>Ukupno: {{placanja.ukupno_bez_postarine}} dinara</td>
     </tr>
     <tr>
         <th colspan="3"></th>

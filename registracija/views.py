@@ -21,6 +21,7 @@ def login_page(request):
         password   = form.cleaned_data.get("password")
         user       = authenticate(request, username=username, password=password)
         if user is not None:
+            request.session.set_expiry(600)
             login(request, user)
             return redirect('/')
         else:

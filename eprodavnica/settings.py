@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'porudzbine',
     'detalji_za_pretragu',
     'recepti',
+  
 ]
 
 MIDDLEWARE = [
@@ -54,6 +55,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_session_timeout.middleware.SessionTimeoutMiddleware',
 ]
 
 ROOT_URLCONF = 'eprodavnica.urls'
@@ -152,3 +154,8 @@ STATICFILES_DIRS = [
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'staticki_fajlovi/media/')
+
+
+
+# SESSION_EXPIRE_SECONDS = 300  # 300 seconds = 5 minutes
+# SESSION_EXPIRE_AFTER_LAST_ACTIVITY = True

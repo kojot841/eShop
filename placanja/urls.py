@@ -7,6 +7,7 @@ app_name = "placanja"
 urlpatterns = [
     path('', placanje, name='pocetna'),
     path('pocetna/', azuriranje_proizvoda, name='placanja'),
+    # path('pocetna/', brisanje, name='brisanje'),
     path('checkout/', checkout, name='checkout'),
     path('checkout/done/', slanje_maila, name='pouzece'),
 ]
