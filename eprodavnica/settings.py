@@ -21,7 +21,7 @@ TEMPLATES = os.path.join(BASE_DIR, 'templates')
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'bljsm5eceiwb)^p-sc0tzp^1r7nlk1_#+y%6l_lsg+t21&_4qb'
+SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -130,9 +130,9 @@ LOGOUT_URL = '/odjava/'
 
 SENDGRID_API_KEY = os.getenv('SENDGRID_API_KEY')
 
-EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST = ''
 EMAIL_HOST_USER = 'apikey'
-EMAIL_HOST_PASSWORD = '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'
+EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
